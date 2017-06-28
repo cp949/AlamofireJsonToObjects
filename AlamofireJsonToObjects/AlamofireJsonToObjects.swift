@@ -65,7 +65,8 @@ extension DataRequest {
                 JSONToMap = NSDictionary()
             }
             if response?.statusCode ?? 0 > 300 {
-                let newDict = NSMutableDictionary(dictionary: JSONToMap!)
+                // let newDict = NSMutableDictionary(dictionary: JSONToMap!)
+                let newDict = NSMutableDictionary(dictionary: JSONToMap! as! [AnyHashable : Any])
                 newDict["__response_statusCode"] = response?.statusCode ?? 0
                 JSONToMap = newDict
             }
